@@ -5,12 +5,15 @@ interfaces {
         vif eth1 {
 			address 192.168.1.11 {
 				prefix-length: 24
-		        broadcast: 192.168.1.255
-		        disable: false
-	        }
-	        address fe80::5054:ff:fe62:8979 {
-	        	prefix-length: 64
-	        }
+		        	broadcast: 192.168.1.255
+		        	disable: false
+	        	}
+	        	address fe80::5054:ff:fe62:8979 {
+	        		prefix-length: 64
+			}
+			address 2002:db8:1100:1::a01 {
+				prefix-length: 61
+			}
         }
     }
     interface eth2 {
@@ -23,6 +26,9 @@ interfaces {
 	        address fe80::5054:ff:fe47:9a62 {
 	        	prefix-length: 64
 	        }
+		address 2002:db8:1000::1 {
+			 prefix-length: 61
+		}
         }
     }
     /* define a loopback interface */
