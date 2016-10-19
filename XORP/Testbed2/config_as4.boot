@@ -11,6 +11,9 @@ interfaces {
 		        address fe80::5054:ff:fed4:3f87 {
 		       	 	prefix-length: 64
 		        }
+			address 2002:db8:1600:3::1404 {
+				prefix-length: 61
+		        }			      
         }
     }
     interface eth2 {
@@ -23,6 +26,9 @@ interfaces {
 	        address fe80::5054:ff:fe4e:8622 {
 	        	prefix-length: 64
 	        }
+		address 2002:db8:1602:1::2801 {
+			prefix-length: 61
+		}
         }
     }
 
