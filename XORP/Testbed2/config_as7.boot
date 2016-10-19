@@ -5,12 +5,15 @@ interfaces {
         vif eth1 {
 			address 192.168.5.3 {
 				prefix-length: 24
-		        broadcast: 192.168.5.255
-		        disable: false
-	        }
-	        address fe80::5054:ff:fe64:1e69 {
-	        	prefix-length: 64
-	        }
+		        	broadcast: 192.168.5.255
+		        	disable: false
+	        	}
+	        	address fe80::5054:ff:fe64:1e69 {
+	        		prefix-length: 64
+	        	}
+			address 2002:db8:1602:3::2804 {
+				prefix-length: 61
+	        	}			      
         }
     }
     interface eth2 {
@@ -22,6 +25,9 @@ interfaces {
 	        }
 	        address fe80::5054:ff:fe8f:dd94 {
 	        	prefix-length: 64
+	        }
+		address 2002:db8:1602:201::4601 {
+			prefix-length: 61
 	        }
         }
     }
