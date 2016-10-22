@@ -50,7 +50,7 @@ interfaces {
 protocols {
     bgp {
        bgp-id:192.168.2.2
-       local-as: 1
+       local-as: 101
        
        peer 192.168.2.1 {
           local-ip: 192.168.2.2
@@ -79,10 +79,10 @@ protocols {
 
 protocols {
     static {
-       route 2000::/3 {
+/*       route 2000::/3 {
            next-hop: ::1
            metric: 1
-       }
+       }*/
        interface-route fe80::5054:ff:fe1a:989c/128 {
            next-hop-interface: "eth1"
            next-hop-vif: "eth1"
