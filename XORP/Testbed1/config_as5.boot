@@ -4,15 +4,19 @@ interfaces {
     interface eth1 {
         vif eth1 {
 		address 192.168.4.2 {
-				prefix-length: 24
+			prefix-length: 24
         		broadcast: 192.168.4.255
         		disable: false
         	}
-	        address 2002:db8:400::2 {
-	        	prefix-length: 96
+	        address 2002:db8:101:002::1e02{
+	        	prefix-length: 61
 	        	disable: false
 	        }
-	        address fe80::a00:27ff:fe4b:38f3 {
+	        address 2002:db8:601:002::1e02{
+	        	prefix-length: 61
+	        	disable: false
+	        } 
+		address fe80::a00:27ff:fe4b:38f3 {
 	        	prefix-length: 64
 	        }
         }
@@ -24,6 +28,14 @@ interfaces {
 		        broadcast: 192.168.6.255
 		        disable: false
 	        }
+	        address 2002:db8:101:101::3201{
+	        	prefix-length: 61
+	        	disable: false
+	        } 
+	        address 2002:db8:601:101::3201{
+	        	prefix-length: 61
+	        	disable: false
+	        } 			 
 	        address fe80::a00:27ff:fe22:1ef6 {
 	        	prefix-length: 64
 	        }
@@ -67,14 +79,14 @@ protocols {
 
 protocols {
     static {
-       route 2480::/9 {
+/*       route 2480::/9 {
            next-hop: ::1
            metric: 1
        }
        route 8120::/11 {
            next-hop: ::1
            metric: 1
-       }
+       }*/
        /*
        interface-route fe80::a00:27ff:fe0c:a1e4/128 {
            next-hop-interface: "eth1"
