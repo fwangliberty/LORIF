@@ -3,15 +3,14 @@
 interfaces {
     interface eth1 {
         vif eth1 {
-			address 192.168.1.11 {
-				prefix-length: 24
+		address 192.168.1.11 {
+			prefix-length: 24
 		        broadcast: 192.168.1.255
 		        disable: false
 	        }
-	        /*  address 2002:db8:100::1::a01 {
+	        address 2002:db8:100:1::a01 {
 	        	prefix-length: 61
-	        	disable: false
-	        } */
+	        } 
 	        address fe80::a00:27ff:fe86:43a7 {
 	        	prefix-length: 64
 	        }
@@ -83,10 +82,10 @@ protocols {
 
 protocols {
     static {
-       route 2000::/3 {
+/*       route 2000::/3 {
            next-hop: ::1
            metric: 1
-       }
+       } */
        interface-route fe80::a00:27ff:fe79:21f3/128 {
            next-hop-interface: "eth1"
            next-hop-vif: "eth1"
