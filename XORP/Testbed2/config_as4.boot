@@ -5,9 +5,9 @@ interfaces {
         vif eth1 {
 			address 192.168.3.3 {
 				prefix-length: 24
-		        broadcast: 192.168.3.255
-		        disable: false
-		   		}
+		        	broadcast: 192.168.3.255
+		        	disable: false
+		   	}
 		        address fe80::5054:ff:fed4:3f87 {
 		       	 	prefix-length: 64
 		        }
@@ -51,11 +51,11 @@ interfaces {
 protocols {
     bgp {
        bgp-id:192.168.5.1
-       local-as: 4
+       local-as: 104
        
        peer 192.168.3.1 {
           local-ip: 192.168.3.3
-          as: 2
+          as: 102
           next-hop: 192.168.3.3
           next-hop6: fe80::5054:ff:fed4:3f87
           local-port:179
@@ -66,7 +66,7 @@ protocols {
        }
        peer 192.168.5.2 {
           local-ip: 192.168.5.1
-          as: 6
+          as: 106
           next-hop: 192.168.5.1
           next-hop6: fe80::5054:ff:fe4e:8622
           local-port: 179
@@ -77,7 +77,7 @@ protocols {
        } 
        peer 192.168.5.3 {
           local-ip: 192.168.5.1
-          as: 7
+          as: 107
           next-hop: 192.168.5.1
           next-hop6: fe80::5054:ff:fe4e:8622
           local-port: 179
@@ -91,10 +91,10 @@ protocols {
 
 protocols {
     static { 
-       route 8200::/9 {
+/*       route 8200::/9 {
            next-hop: ::1
            metric: 1
-       }
+       }*/
        interface-route fe80::5054:ff:fee4:ce9a/128 {
            next-hop-interface: "eth1"
            next-hop-vif: "eth1"
