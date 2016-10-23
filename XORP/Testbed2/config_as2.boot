@@ -104,11 +104,26 @@ protocols {
            next-hop-vif: "eth1"
            metric: 100
        }
+       interface-route 2002:db8:1600:2::1402/128 {
+           next-hop-interface: "eth1"
+           next-hop-vif: "eth1"
+           metric: 100
+       }
+       interface-route 2002:db8:1600:3::1404/128 {
+           next-hop-interface: "eth1"
+           next-hop-vif: "eth1"
+           metric: 100
+       }		   
        interface-route fe80::5054:ff:fe47:9a62/128 {
            next-hop-interface: "eth2"
            next-hop-vif: "eth2"
            metric: 100
        }
+       interface-route 2002:db8:1000::1/128 {
+           next-hop-interface: "eth2"
+           next-hop-vif: "eth2"
+           metric: 100
+       }		   
     }
 }
 
