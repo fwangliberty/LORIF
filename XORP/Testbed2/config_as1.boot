@@ -54,7 +54,7 @@ protocols {
        
        peer 192.168.2.1 {
           local-ip: 192.168.2.2
-          as: 2
+          as: 102
           next-hop: 192.168.2.2
           next-hop6: fe80::5054:ff:fe47:9a62
           local-port:179
@@ -65,7 +65,7 @@ protocols {
        }
        peer 192.168.1.12 {
           local-ip: 192.168.1.11
-          as: 3
+          as: 103
           next-hop: 192.168.1.11
           next-hop6: fe80::5054:ff:fe62:8979
           local-port: 179
@@ -88,11 +88,21 @@ protocols {
            next-hop-vif: "eth1"
            metric: 100
        }
-       interface-route fe80::5054:ff:fe73:b8a5/128 {
+       interface-route 2002:db8:1100:2::a02/128 {
+           next-hop-interface: "eth1"
+           next-hop-vif: "eth1"
+           metric: 100
+       }		   
+       interface-route 2002:db8:1000::2/128 {
            next-hop-interface: "eth2"
            next-hop-vif: "eth2"
            metric: 100
        }
+       interface-route fe80::5054:ff:fe73:b8a5/128 {
+           next-hop-interface: "eth2"
+           next-hop-vif: "eth2"
+           metric: 100
+       }		   
     }
 }
 
