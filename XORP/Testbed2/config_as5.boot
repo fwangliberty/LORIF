@@ -10,12 +10,15 @@ interfaces {
         		}
 	        	address fe80::5054:ff:fe1b:c09 {
 	        		prefix-length: 64
+				disable: false			       
 	        	}
 			address 2002:db8:1101:2::1e02 {
-				prefix-length: 61			      	        		prefix-length: 64
+				prefix-length: 61
+				disable: false			      
 	        	}
 			address 2002:db8:1601:2::1e02 {
-				prefix-length: 61			      	        		prefix-length: 64
+				prefix-length: 61
+				disable: false			      
 	        	}
         }
     }
@@ -28,12 +31,15 @@ interfaces {
 	        }
 	        address fe80::5054:ff:fe10:3639 {
 	        	prefix-length: 64
+			disable: false				
 	        }
 		address 2002:db8:1101:101::3201 {
-			prefix-length: 61			      	        		prefix-length: 64
+			prefix-length: 61
+			disable: false				
 	        }
 		address 2002:db8:1601:101::3201 {
-			prefix-length: 61			      	        		prefix-length: 64
+			prefix-length: 61
+			disable: false				
 	        }	
         }
     }
@@ -87,11 +93,31 @@ protocols {
            next-hop-vif: "eth1"
            metric: 100
        }
-       interface-route  /128 {
+       interface-route  2002:db8:1101:1::1e01/128 {
+           next-hop-interface: "eth1"
+           next-hop-vif: "eth1"
+           metric: 100
+       }		   
+       interface-route  2002:db8:1101:111::3202/128 {
            next-hop-interface: "eth2"
            next-hop-vif: "eth2"
            metric: 100
        }
+       interface-route  2002:db8:1601:111::3202/128 {
+           next-hop-interface: "eth2"
+           next-hop-vif: "eth2"
+           metric: 100
+       }
+       interface-route  2002:db8:1101:122::3203/128 {
+           next-hop-interface: "eth2"
+           next-hop-vif: "eth2"
+           metric: 100
+       }
+       interface-route  2002:db8:1601:122::3203/128 {
+           next-hop-interface: "eth2"
+           next-hop-vif: "eth2"
+           metric: 100
+       }		   
     }
 }
 
