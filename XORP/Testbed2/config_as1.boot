@@ -27,7 +27,7 @@ interfaces {
 	        	prefix-length: 64
 	        }
 		address 2002:db8:1000::1 {
-			 prefix-length: 61
+			 prefix-length: 64
 		}
         }
     }
