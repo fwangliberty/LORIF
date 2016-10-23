@@ -49,7 +49,10 @@ interfaces {
 	        }	
 		address 2002:db8:1601:201::3c01 {
 			prefix-length: 61
-	        }			 
+	        }
+		address 2002:db8:1602:101::3c01 {
+			prefix-length: 61
+	        }
         }
     }
     /* define a loopback interface */
@@ -117,9 +120,39 @@ protocols {
            next-hop-vif: "eth1"
            metric: 100
        }
+       interface-route 2002:db8:1101:1::1e01/128 {
+           next-hop-interface: "eth1"
+           next-hop-vif: "eth1"
+           metric: 100
+       }	
+       interface-route 2002:db8:1601:1::1e01/128 {
+           next-hop-interface: "eth1"
+           next-hop-vif: "eth1"
+           metric: 100
+       }		   
        interface-route fe80::5054:ff:fe4e:8622/128 {
            next-hop-interface: "eth2"
            next-hop-vif: "eth2"
+           metric: 100
+       }
+       interface-route 2002:db8:1602:1::2801/128 {
+           next-hop-interface: "eth2"
+           next-hop-vif: "eth2"
+           metric: 100
+       }
+       interface-route 2002:db8:1101:213::3c02/128 {
+           next-hop-interface: "eth3"
+           next-hop-vif: "eth3"
+           metric: 100
+       }
+       interface-route 2002:db8:1601:213::3c02/128 {
+           next-hop-interface: "eth3"
+           next-hop-vif: "eth3"
+           metric: 100
+       }
+       interface-route 2002:db8:1602:213::3c02/128 {
+           next-hop-interface: "eth3"
+           next-hop-vif: "eth3"
            metric: 100
        }
     }
