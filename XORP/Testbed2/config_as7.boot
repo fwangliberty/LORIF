@@ -78,11 +78,21 @@ protocols {
            next-hop-vif: "eth1"
            metric: 100
        }
-       interface-route  /128 {
+       interface-route 2002:db8:1602:001::2801/128 {
+           next-hop-interface: "eth1"
+           next-hop-vif: "eth1"
+           metric: 100
+       }		   
+       interface-route  fe80::5054:ff:fe8a:c8/128 {
            next-hop-interface: "eth2"
            next-hop-vif: "eth2"
            metric: 100
        }
+       interface-route  2002:db8:1602:210::4602/128 {
+           next-hop-interface: "eth2"
+           next-hop-vif: "eth2"
+           metric: 100
+       }	  
     }
 }
 
