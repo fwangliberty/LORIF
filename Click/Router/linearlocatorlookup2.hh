@@ -46,11 +46,19 @@ private:
   IP6Address _last_addr;
   IP6Address _last_gw;
   int _last_output;
+  
+  IP6Address _last_addr_ip6;
+  IP6Address _last_gw_ip6;
+  int _last_output_ip6;
 
 #ifdef IP_RT_CACHE2
   IPAddress _last_addr2;
   IPAddress _last_gw2;
   int _last_output2;
+  
+  IPAddress _last_addr2_ip6;
+  IPAddress _last_gw2_ip6;
+  int _last_output2_ip6;  
 #endif
 
 };
