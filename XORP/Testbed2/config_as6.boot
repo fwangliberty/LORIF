@@ -71,11 +71,11 @@ interfaces {
 protocols {
     bgp {
        bgp-id:192.168.4.3
-       local-as: 6
+       local-as: 106
        
        peer 192.168.4.1 {
           local-ip: 192.168.4.3
-          as: 3
+          as: 103
           next-hop: 192.168.4.3
           next-hop6: fe80::5054:ff:fe55:67ef
           local-port:179
@@ -86,7 +86,7 @@ protocols {
        }
        peer 192.168.5.1 {
           local-ip: 192.168.5.2
-          as: 4
+          as: 104
           next-hop: 192.168.5.2
           next-hop6: fe80::5054:ff:fecd:7725
           local-port: 179
@@ -100,7 +100,7 @@ protocols {
 
 protocols {
     static {
-       route 2500::/10 {
+/*       route 2500::/10 {
            next-hop: ::1
            metric: 1
        }
@@ -111,7 +111,7 @@ protocols {
        route 8210::/12 {
            next-hop: ::1
            metric: 1
-       }
+       } */
        interface-route fe80::5054:ff:fe92:6368/128 {
            next-hop-interface: "eth1"
            next-hop-vif: "eth1"
