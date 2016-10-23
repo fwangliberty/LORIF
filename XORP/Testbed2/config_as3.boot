@@ -132,21 +132,51 @@ protocols {
            next-hop-vif: "eth1"
            metric: 100
        }
+       interface-route 2002:db8:1100:1::a01/128 {
+           next-hop-interface: "eth1"
+           next-hop-vif: "eth1"
+           metric: 100
+       }		   
        interface-route fe80::5054:ff:fee4:ce9a/128 {
            next-hop-interface: "eth2"
            next-hop-vif: "eth2"
            metric: 100
        }
-       interface-route fe80::5054:ff:fe1b:c09/128 {
+       interface-route 2002:db8:1600:1::1401/128 {
+           next-hop-interface: "eth2"
+           next-hop-vif: "eth2"
+           metric: 100
+       }		   
+       interface-route fe80::5054:ff:fe1b:c099/128 {
            next-hop-interface: "eth3"
            next-hop-vif: "eth3"
            metric: 100
        }
+       interface-route 2002:db8:1101:2::1e02/128 {
+           next-hop-interface: "eth3"
+           next-hop-vif: "eth3"
+           metric: 100
+       }
+       interface-route 2002:db8:1601:2::1e02/128 {
+           next-hop-interface: "eth3"
+           next-hop-vif: "eth3"
+           metric: 100
+       }		   
        interface-route fe80::5054:ff:fe55:67ef/128 {
            next-hop-interface: "eth3"
            next-hop-vif: "eth3"
            metric: 100
        }
+       interface-route 2002:db8:1101:101::3201/128 {
+           next-hop-interface: "eth3"
+           next-hop-vif: "eth3"
+           metric: 100
+       }
+       interface-route 2002:db8:1601:101::3201/128 {
+           next-hop-interface: "eth3"
+           next-hop-vif: "eth3"
+           metric: 100
+       }		   
     }
 }
 
