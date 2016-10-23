@@ -203,17 +203,17 @@ LinearLocatorLookup2::push(int, Packet *p)
 	  if (a) {
 		  uint32_t *xi = (uint32_t *) a.data32();
 		  //click_chatter("an IPv6 %x packet lookup output = %d", ntohl(xi[3]), _last_output);
-		  if (a == _last_addr     ) {
-			  if (_last_gw)
+		  if (a == _last_addr_ip6     ) {
+			  if (_last_gw_ip6)
 			  {
-				  SET_DST_IP6_ANNO(p, _last_gw);
+				  SET_DST_IP6_ANNO(p, _last_gw_ip6);
 			  }
 			  p->set_ip6_header(ip6h, sizeof(click_ip6));
-			  output(_last_output).push(p);
+			  output(_last_output_ip6).push(p);
 			  return;
 		  }
 #ifdef IP_RT_CACHE2
-		  else if (a == _last_addr2) {
+		  else if (a == _last_addr2_ip6) {
 	#if 0
       IP6address tmpa;
       int tmpi;
@@ -221,10 +221,10 @@ LinearLocatorLookup2::push(int, Packet *p)
       EXCHANGE(_last_gw, _last_gw2, tmpa);
       EXCHANGE(_last_output, _last_output2, tmpi);
 	#endif
-      if (_last_gw2) {
-    	  SET_DST_IP6_ANNO(p, _last_gw2);
+      if (_last_gw2_ip6) {
+    	  SET_DST_IP6_ANNO(p, _last_gw2_ip6);
       }
-      output(_last_output2).push(p);
+      output(_last_output2_ip6).push(p);
       return;
 	}
 #endif
@@ -232,15 +232,15 @@ LinearLocatorLookup2::push(int, Packet *p)
 
   if (_t.lookup(a, gw, ifi)) {
 #ifdef IP_RT_CACHE2
-    _last_addr2 = _last_addr;
-    _last_gw2 = _last_gw;
-    _last_output2 = _last_output;
+    _last_addr2_ip6 = _last_addr_ip6;
+    _last_gw2_ip6 = _last_gw_ip6;
+    _last_output2_ip6 = _last_output_ip6;
 #endif
     uint32_t *xi = (uint32_t *) gw.data32();
     //click_chatter("the IPv6 packet %x lookup successfully output = %d", ntohl(xi[0]), ifi);
-    _last_addr = a;
-    _last_gw = gw;
-    _last_output = ifi;
+    _last_addr_ip6 = a;
+    _last_gw_ip6 = gw;
+    _last_output_ip6 = ifi;
     if (gw != IP6Address("::0")) {
 	SET_DST_IP6_ANNO(p, IP6Address(gw));
     }
