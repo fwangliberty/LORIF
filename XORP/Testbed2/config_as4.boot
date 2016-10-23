@@ -100,16 +100,31 @@ protocols {
            next-hop-vif: "eth1"
            metric: 100
        }
+       interface-route 2002:db8:1600:1::1401/128 {
+           next-hop-interface: "eth1"
+           next-hop-vif: "eth1"
+           metric: 100
+       }		   
        interface-route fe80::5054:ff:fecd:7725/128 {
            next-hop-interface: "eth2"
            next-hop-vif: "eth2"
            metric: 100
        }
+       interface-route 2002:db8:1602:2::2802/128 {
+           next-hop-interface: "eth2"
+           next-hop-vif: "eth2"
+           metric: 100
+       }		   
        interface-route fe80::5054:ff:fe64:1e69/128 {
            next-hop-interface: "eth2"
            next-hop-vif: "eth2"
            metric: 100
        }
+       interface-route 2002:db8:1602:3::2804/128 {
+           next-hop-interface: "eth2"
+           next-hop-vif: "eth2"
+           metric: 100
+       }		   
     }
 }
 
