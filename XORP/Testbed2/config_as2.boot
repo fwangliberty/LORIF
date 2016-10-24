@@ -54,7 +54,7 @@ protocols {
        
        peer 192.168.2.2 {
           local-ip: 192.168.2.1
-          as: 1
+          as: 101
           next-hop: 192.168.2.1
           next-hop6: fe80::5054:ff:fe73:b8a5
           local-port:179
@@ -65,7 +65,7 @@ protocols {
        }
        peer 192.168.3.2 {
           local-ip: 192.168.3.1
-          as: 3
+          as: 103
           next-hop: 192.168.3.1
           next-hop6: fe80::5054:ff:fee4:ce9a
           local-port: 179
@@ -76,7 +76,7 @@ protocols {
        } 
        peer 192.168.3.3 {
           local-ip: 192.168.3.1
-          as: 4
+          as: 104
           next-hop: 192.168.3.1
           next-hop6: fe80::5054:ff:fee4:ce9a
           local-port: 179
@@ -145,7 +145,7 @@ policy {
       term a {
          from  {
             protocol: "bgp"
-            as-path: "3"
+            as-path: "103"
          }
          then {
             reject
@@ -154,7 +154,7 @@ policy {
       term b {
          from  {
             protocol: "bgp"
-            as-path: "4"
+            as-path: "104"
          }
          then {
             reject
