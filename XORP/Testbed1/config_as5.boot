@@ -108,9 +108,6 @@ policy {
           protocol: "static"
           metric: 1
         }
-        to {
-           neighbor: 192.168.6.1
-        }
         then {
            med: 13
            accept
