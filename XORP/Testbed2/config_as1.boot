@@ -31,6 +31,18 @@ interfaces {
 		}
         }
     }
+    interface eth9 {
+        vif eth9 {
+	        address 192.168.21.12 {
+		        prefix-length: 24
+		        broadcast: 192.168.21.255
+		        disable: false
+	        }
+	        address fe80::c4c0:66ff:fed4:eccd {
+	        	prefix-length: 64
+	        }
+        }
+    }
     /* define a loopback interface */
     interface lo {
         vif lo {
@@ -68,6 +80,17 @@ protocols {
           as: 103
           next-hop: 192.168.1.11
           next-hop6: fe80::5054:ff:fe62:8979
+          local-port: 179
+          peer-port: 179
+          ipv4-multicast: true
+          ipv6-unicast: true
+          ipv6-multicast: true
+       } 
+       peer 192.168.21.11 {
+          local-ip: 192.168.21.12
+          as: 1
+          next-hop: 192.168.21.12
+          next-hop6: fe80::c4c0:66ff:fed4:eccd
           local-port: 179
           peer-port: 179
           ipv4-multicast: true
