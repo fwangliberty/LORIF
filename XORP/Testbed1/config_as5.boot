@@ -66,8 +66,8 @@ protocols {
           local-ip: 192.168.4.2
           as: 3
           next-hop: 192.168.4.2
-          /* next-hop6: fe80::a00:27ff:fe4b:38f3 */
-          next-hop6: 2001:db8:400::2
+          next-hop6: fe80::a00:27ff:fe4b:38f3
+          /* next-hop6: 2001:db8:400::2*/
           local-port:179
           peer-port: 179
           ipv4-multicast: true
@@ -125,7 +125,7 @@ policy {
 
 protocols {
    bgp {
-     export: "static-to-bgp,community"
+     export: "static-to-bgp"
    }
 }
 
